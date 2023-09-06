@@ -1,0 +1,50 @@
+﻿<NavigationWindow x:Class="WPF_laba_26.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_laba_26"
+        mc:Ignorable="d"
+        Title="TextEditor" Height="450" Width="800" ShowsNavigationUI="False">
+    
+    <NavigationWindow.Content>
+        <Page>
+            <Page.Resources>
+                <Style TargetType="TextBox" x:Key="tb_search">
+                    <Setter Property="Foreground" Value="LightGray"/>
+                    <Setter Property="Text" Value="Вводить здесь"/>
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="LightGray"/>
+                </Style>
+
+                <Style TargetType="TextBox" x:Key="tb_search_no">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Text" Value=""/>
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="LightGray"/>
+                </Style>
+            </Page.Resources>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.08*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <ToolBar Grid.Row="0" VerticalContentAlignment="Center">
+                    <Menu VerticalAlignment="Center">
+                        <MenuItem Header="Файл">
+                            <MenuItem Header="Открыть..."/>
+                            <MenuItem Header="Сохранить как..."/>
+                            <MenuItem Header="Выход"/>
+                            <TextBox Style="{StaticResource tb_search}" GotFocus="TB_GotFocus" LostFocus="TB_LostFocus"/>
+                        </MenuItem>
+                    </Menu>
+                    <TextBox Style="{StaticResource tb_search}" GotFocus="TB_GotFocus" LostFocus="TB_LostFocus"/>
+                </ToolBar>
+            </Grid>
+        </Page>
+    </NavigationWindow.Content>
+</NavigationWindow>
